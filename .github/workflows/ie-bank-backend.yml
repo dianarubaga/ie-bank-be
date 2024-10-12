@@ -90,16 +90,6 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Set environment variables for uat
-        run: |
-          echo "DBHOST=${{ secrets.DBHOST_UAT }}" >> $GITHUB_ENV
-          echo "DBNAME=${{ secrets.DBNAME_UAT }}" >> $GITHUB_ENV
-          echo "DBPASS=${{ secrets.DBPASS_UAT }}" >> $GITHUB_ENV
-          echo "DBUSER=${{ secrets.DBUSER_UAT }}" >> $GITHUB_ENV
-          echo "FLASK_APP=${{ secrets.FLASK_APP_UAT }}" >> $GITHUB_ENV
-          echo "FLASK_DEBUG=${{ secrets.FLASK_DEBUG_UAT }}" >> $GITHUB_ENV
-          echo "ENV=uat" >> $GITHUB_ENV
-
       - name: 'Deploy to Azure Web App - UAT'
         uses: azure/webapps-deploy@v2
         with:
