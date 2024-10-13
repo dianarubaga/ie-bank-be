@@ -3,7 +3,7 @@ name: ie-bank-backend
 on:
   push:
   pull_request:
-    branches: [ "main" ]
+    branches: 
   workflow_dispatch:
 
 permissions:
