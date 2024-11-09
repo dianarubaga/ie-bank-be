@@ -10,14 +10,14 @@ COPY requirements.txt requirements.txt
 
 # runs the command to install all Python dependencies listed in requirements.txt
 # using pip3 
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 # This copies all files and directories from your current local 
 # directory to the /app directory in the Docker container.
 COPY . .
 
 #This tells Docker that the container will listen on port 5000 at runtime
-EXPOSE 5000
+EXPOSE 5001
 
 #command to run when the container starts
 #runs python3 to execute the Flask application using the -m module flag,
